@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= form.label :main_condition %>
-    <%= form.text_field :main_condition, id: :patient_main_condition %>
+    <%= select_tag(:main_condition, options_for_select([['Pannenkoekensyndroom', 1], ['Poffertjesziekte', 2],['Patatjesfobie', 3]])) %>
   </div>
 
   <div class="field">

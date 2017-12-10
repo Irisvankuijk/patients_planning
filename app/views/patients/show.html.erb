@@ -12,7 +12,12 @@
 
 <p>
   <strong>Date birth:</strong>
-  <%= @patient.date_birth %>
+  <%= @patient.date_birth.strftime('%m/%d/%Y') unless @patient.date_birth.nil?  %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @patient.age %>
 </p>
 
 <p>
