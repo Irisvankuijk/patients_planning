@@ -35,5 +35,12 @@
   <%= @patient.location %>
 </p>
 
+<p>
+  <strong>Interviews:</strong>
+  <% @patient.interviews.each do | interview | %>
+  <%= interview.title %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_patient_path(@patient) %> |
 <%= link_to 'Back', patients_path %>
