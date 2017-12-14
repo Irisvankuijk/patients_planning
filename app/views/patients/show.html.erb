@@ -37,9 +37,14 @@
 
 <p>
   <strong>Interviews:</strong>
+   <ul>
   <% @patient.interviews.each do | interview | %>
-  <%= interview.title %>
+  <li>
+  <%= link_to interview.title, interview %> |
+  <%= interview.date %>
+  </li>
   <% end %>
+</ul>
 </p>
 
 <%= link_to 'Edit', edit_patient_path(@patient) %> |
