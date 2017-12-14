@@ -21,7 +21,7 @@
       <tr>
         <td><%= patient.name %></td>
         <td><%= patient.last_name %></td>
-        <td><%= patient.date_birth.strftime('%m/%d/%Y') unless patient.date_birth.nil?  %></td>
+        <td><%= patient.date_birth.strftime('%d-%m-%Y') unless patient.date_birth.nil?  %></td>
         <td><%= patient.age %></td>
         <td><%= patient.gender %></td>
         <td><%= patient.main_condition %></td>

@@ -16,7 +16,7 @@
     <% @interviews.each do |interview| %>
       <tr>
         <td><%= interview.title %></td>
-        <td><%= interview.date %></td>
+        <td><%= interview.date.strftime('%d-%m-%Y') %></td>
         <td><%= interview.patient.full_name %></td>
         <td><%= link_to 'Show', interview %></td>
         <td><%= link_to 'Edit', edit_interview_path(interview) %></td>
