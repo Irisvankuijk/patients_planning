@@ -19,7 +19,6 @@
   <strong>Age:</strong>
   <%= @patient.age %>
 </p>
-
 <p>
   <strong>Gender:</strong>
   <%= @patient.gender %>
@@ -37,14 +36,17 @@
 
 <p>
   <strong>Interviews:</strong>
-   <ul>
-  <% @patient.interviews.each do | interview | %>
+    <% if @patient.interviews.empty? %>
+None
+    <% else %>
+     <% @patient.interviews.each do | interview | %>
+     <ul>
   <li>
   <%= link_to interview.title, interview %> |
-  <%= interview.date %>
-  </li>
+  <%= interview.date.strftime('%d-%m-%Y') %>
+  </li></ul>
   <% end %>
-</ul>
+<% end %>
 </p>
 
 <%= link_to 'Edit', edit_patient_path(@patient) %> |

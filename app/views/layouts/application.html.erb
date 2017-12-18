@@ -9,6 +9,12 @@
   </head>
 
   <body>
-    <%= yield %>
+	 <ul class="nav nav-tabs">
+		<li role="presentation"><%= link_to "Patients", patients_path, :class => current_class?(patients_path)%></li>
+		<li role="presentation"><%= link_to "Interviews", interviews_path, :class => current_class?(interviews_path)%></li>
+	</ul>
+  	<div class="container">
+   	 <%= yield %>
+    </div>
   </body>
 </html>
