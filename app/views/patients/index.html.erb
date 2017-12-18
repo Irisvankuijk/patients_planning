@@ -2,40 +2,46 @@
 
 <h1>Patients</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Last name</th>
-      <th>Date birth</th>
-      <th>Age</th>
-      <th>Gender</th>
-      <th>Main condition</th>
-      <th>Location</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="panel panel-default">
+<div class="panel-body">
 
-  <tbody>
-    <% @patients.each do |patient| %>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= patient.name %></td>
-        <td><%= patient.last_name %></td>
-        <td><%= patient.date_birth.strftime('%d-%m-%Y') unless patient.date_birth.nil?  %></td>
-        <td><%= patient.age %></td>
-        <td><%= patient.gender %></td>
-        <td><%= patient.main_condition %></td>
-        <td><%= patient.location %></td>
-        <td><%= link_to 'Show', patient %></td>
-        <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
-        <td><%= link_to 'Delete', patient, method: :delete, data: { confirm: 'Are you sure you want to delete this patient?' } %></td>
+        <th>Name</th>
+        <th>Last name</th>
+        <th>Date birth</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Main condition</th>
+        <th>Location</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @patients.each do |patient| %>
+        <tr>
+          <td><%= patient.name %></td>
+          <td><%= patient.last_name %></td>
+          <td><%= patient.date_birth.strftime('%d-%m-%Y') unless patient.date_birth.nil?  %></td>
+          <td><%= patient.age %></td>
+          <td><%= patient.gender %></td>
+          <td><%= patient.main_condition %></td>
+          <td><%= patient.location %></td>
+          <td><%= link_to 'Show', patient %></td>
+          <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
+          <td><%= link_to 'Delete', patient, method: :delete, data: { confirm: 'Are you sure you want to delete this patient?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'Add new Patient', new_patient_path %>
-<br><br>
-<%= link_to 'Add new Interview', new_interview_path %>
+</div>
+</div>
+
+<div class="btn-group" role="group" aria-label="...">
+  <a button type="button" class="btn btn-default" href="/patients/new">Add New Patient</a>
+  <a button type="button" class="btn btn-default" href="/interviews/new">Add New Interview</a>
+</div>
+
