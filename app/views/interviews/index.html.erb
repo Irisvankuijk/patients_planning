@@ -2,7 +2,11 @@
 
 <h1>Interviews</h1>
 
-<table>
+<div class="panel panel-default">
+<div class="panel-body">
+
+<table class ="table">
+
   <thead>
     <tr>
       <th>Title</th>
@@ -24,8 +28,13 @@
       </tr>
     <% end %>
   </tbody>
+
 </table>
 
-<br>
+</div>
+</div>
 
-<%= link_to 'Add new Interview', new_interview_path %>
+<div class="btn-group" role="group" aria-label="...">
+  <a button type="button" class="btn btn-default" href="/interviews/new">Add New Interview</a>
+</div>
+
