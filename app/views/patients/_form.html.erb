@@ -11,35 +11,35 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :patient_name %>
+    <%= form.text_field :name, id: :patient_name, class: "form-control"  %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :last_name %>
-    <%= form.text_field :last_name, id: :patient_last_name %>
+    <%= form.text_field :last_name, id: :patient_last_name, class: "form-control"  %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :date_birth %>
-    <%= form.date_field :date_birth, id: :patient_date_birth %>
+    <%= form.date_field :date_birth, id: :patient_date_birth, class: "form-control"  %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :gender %>
-    <%= form.text_field :gender, id: :patient_gender %>
+    <%= form.text_field :gender, id: :patient_gender, class: "form-control"  %>
   </div>
 
-  <div class="field">
-    <%= form.label :main_condition %>
-    <%= select_tag(:main_condition, options_for_select([['Pannenkoekensyndroom', 1], ['Poffertjesziekte', 2],['Patatjesfobie', 3]])) %>
-  </div>
-
-  <div class="field">
+  <div class="form-group">
     <%= form.label :location %>
-    <%= form.text_field :location, id: :patient_location %>
+    <%= form.text_field :location, id: :patient_location, class: "form-control"  %>
   </div>
+
+<div class="form-group">
+  <%= form.label :main_condition %>
+  <%= form.select :main_condition, ['Pannenkoekensyndroom', 'Poffertjesziekte', 'Patatjesfobie'], class: "form-control" %>
+
 
   <div class="actions">
     <%= form.submit %>
