@@ -1,10 +1,12 @@
 class InterviewsController < ApplicationController
   before_action :set_interview, only: [:show, :edit, :update, :destroy]
 
+  helper_method :sort_column, :sort_direction
+
   # GET /interviews
   # GET /interviews.json
   def index
-    @interviews = Interview.all
+    @interviews = Interview.order("#{sort_column} #{sort_direction}")
   end
 
   # GET /interviews/1
@@ -70,5 +72,21 @@ class InterviewsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def interview_params
       params.require(:interview).permit(:title, :notes, :date, :patient_id)
+    end
+
+    def sortable_columns
+      ["date", "patient_id"]
+    end
+
+    def sort_column
+      sortable_columns.include?(params[:column]) ? params[:column] : "date"
+    end
+
+    def sort_column
+      sortable_columns.include?(params[:column]) ? params[:column] : "patient_id"
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 end
