@@ -1,5 +1,6 @@
 class Patient < ApplicationRecord
 	has_many :interviews
+	has_one :planning
 	validates :name, :last_name, :date_birth, :gender, :main_condition, :location, presence: true
 	def age
 		return 0 if date_birth.nil?
