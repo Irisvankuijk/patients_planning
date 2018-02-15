@@ -2,9 +2,14 @@
 
 <h1>Plannings</h1>
 
-<table>
+<div class="panel panel-default">
+<div class="panel-body">
+
+<table class ="table">
+
   <thead>
     <tr>
+      <th>Patient</th>
       <th>Status</th>
       <th>Postphoned reason</th>
       <th>Postphoned date</th>
@@ -20,6 +25,7 @@
   <tbody>
     <% @plannings.each do |planning| %>
       <tr>
+        <td><%= planning.patient_id %></td>
         <td><%= planning.status %></td>
         <td><%= planning.postphoned_reason %></td>
         <td><%= planning.postphoned_date %></td>
@@ -35,6 +41,8 @@
     <% end %>
   </tbody>
 </table>
+
+</div></div>
 
 <br>
 
