@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: MyString
+  postphoned_reason: MyText
+  postphoned_date: 2018-02-15
+  scheduled_datetime: 2018-02-15 13:47:11
+  scheduled_interviewer: MyString
+  scheduled_location: MyString
+  excluded_reason: MyText
+  declined_reason: MyText
+
+two:
+  status: MyString
+  postphoned_reason: MyText
+  postphoned_date: 2018-02-15
+  scheduled_datetime: 2018-02-15 13:47:11
+  scheduled_interviewer: MyString
+  scheduled_location: MyString
+  excluded_reason: MyText
+  declined_reason: MyText

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @planning.status %>
+</p>
+
+<p>
+  <strong>Postphoned reason:</strong>
+  <%= @planning.postphoned_reason %>
+</p>
+
+<p>
+  <strong>Postphoned date:</strong>
+  <%= @planning.postphoned_date %>
+</p>
+
+<p>
+  <strong>Scheduled datetime:</strong>
+  <%= @planning.scheduled_datetime %>
+</p>
+
+<p>
+  <strong>Scheduled interviewer:</strong>
+  <%= @planning.scheduled_interviewer %>
+</p>
+
+<p>
+  <strong>Scheduled location:</strong>
+  <%= @planning.scheduled_location %>
+</p>
+
+<p>
+  <strong>Excluded reason:</strong>
+  <%= @planning.excluded_reason %>
+</p>
+
+<p>
+  <strong>Declined reason:</strong>
+  <%= @planning.declined_reason %>
+</p>
+
+<%= link_to 'Edit', edit_planning_path(@planning) %> |
+<%= link_to 'Back', plannings_path %>

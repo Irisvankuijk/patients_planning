@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171211160858) do
+ActiveRecord::Schema.define(version: 20180215124711) do
 
   create_table "interviews", force: :cascade do |t|
     t.string "title"
@@ -28,6 +28,19 @@ ActiveRecord::Schema.define(version: 20171211160858) do
     t.string "gender"
     t.string "main_condition"
     t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "plannings", force: :cascade do |t|
+    t.string "status"
+    t.text "postphoned_reason"
+    t.date "postphoned_date"
+    t.datetime "scheduled_datetime"
+    t.string "scheduled_interviewer"
+    t.string "scheduled_location"
+    t.text "excluded_reason"
+    t.text "declined_reason"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

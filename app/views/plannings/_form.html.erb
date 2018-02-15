@@ -1,0 +1,57 @@
+<%= form_with(model: planning, local: true) do |form| %>
+  <% if planning.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(planning.errors.count, "error") %> prohibited this planning from being saved:</h2>
+
+      <ul>
+      <% planning.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status, id: :planning_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :postphoned_reason %>
+    <%= form.text_area :postphoned_reason, id: :planning_postphoned_reason %>
+  </div>
+
+  <div class="field">
+    <%= form.label :postphoned_date %>
+    <%= form.date_select :postphoned_date, id: :planning_postphoned_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :scheduled_datetime %>
+    <%= form.datetime_select :scheduled_datetime, id: :planning_scheduled_datetime %>
+  </div>
+
+  <div class="field">
+    <%= form.label :scheduled_interviewer %>
+    <%= form.text_field :scheduled_interviewer, id: :planning_scheduled_interviewer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :scheduled_location %>
+    <%= form.text_field :scheduled_location, id: :planning_scheduled_location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :excluded_reason %>
+    <%= form.text_area :excluded_reason, id: :planning_excluded_reason %>
+  </div>
+
+  <div class="field">
+    <%= form.label :declined_reason %>
+    <%= form.text_area :declined_reason, id: :planning_declined_reason %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
