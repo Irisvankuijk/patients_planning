@@ -11,44 +11,44 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :status %>
-    <%= form.text_field :status, id: :planning_status %>
+    <%= form.text_field :status, id: :planning_status, class: "form-control"  %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :postphoned_reason %>
-    <%= form.text_area :postphoned_reason, id: :planning_postphoned_reason %>
+    <%= form.text_area :postphoned_reason, id: :planning_postphoned_reason, class: "form-control"  %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :postphoned_date %>
-    <%= form.date_select :postphoned_date, id: :planning_postphoned_date %>
+    <%= form.date_field :postphoned_date, id: :planning_postphoned_date, class: "form-control"  %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :scheduled_datetime %>
-    <%= form.datetime_select :scheduled_datetime, id: :planning_scheduled_datetime %>
+    <%= form.datetime_select :scheduled_datetime, id: :planning_scheduled_datetime, class: "form-control"  %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :scheduled_interviewer %>
-    <%= form.text_field :scheduled_interviewer, id: :planning_scheduled_interviewer %>
+    <%= form.text_field :scheduled_interviewer, id: :planning_scheduled_interviewer, class: "form-control"  %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :scheduled_location %>
-    <%= form.text_field :scheduled_location, id: :planning_scheduled_location %>
+    <%= form.text_field :scheduled_location, id: :planning_scheduled_location, class: "form-control"  %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :excluded_reason %>
-    <%= form.text_area :excluded_reason, id: :planning_excluded_reason %>
+    <%= form.text_area :excluded_reason, id: :planning_excluded_reason, class: "form-control"  %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :declined_reason %>
-    <%= form.text_area :declined_reason, id: :planning_declined_reason %>
+    <%= form.text_area :declined_reason, id: :planning_declined_reason, class: "form-control"  %>
   </div>
 
   <div class="actions">
