@@ -27,9 +27,11 @@ class PatientsController < ApplicationController
   # POST /patients.json
   def create
     @patient = Patient.new(patient_params)
+    @planning = Planning.new
+    @patient.planning = @planning
 
     respond_to do |format|
-      if @patient.save
+      if @patient.save && @planning.save
         format.html { redirect_to @patient, notice: 'Patient was successfully created.' }
         format.json { render :show, status: :created, location: @patient }
       else

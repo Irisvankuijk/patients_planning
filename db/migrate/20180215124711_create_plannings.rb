@@ -9,6 +9,7 @@ class CreatePlannings < ActiveRecord::Migration[5.1]
       t.string :scheduled_location
       t.text :excluded_reason
       t.text :declined_reason
+      t.integer :patient_id
 
       t.timestamps
     end

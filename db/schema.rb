@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20180215124711) do
     t.string "scheduled_location"
     t.text "excluded_reason"
     t.text "declined_reason"
+    t.integer "patient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
