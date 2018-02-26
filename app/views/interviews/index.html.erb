@@ -21,7 +21,7 @@
       <tr>
         <td><%= interview.title %></td>
         <td><%= interview.date.strftime('%d-%m-%Y') %></td>
-        <td><%= interview.patient_id %></td>
+        <td><%= interview.patient.full_name %></td>
         <td><%= link_to 'Show', interview %></td>
         <td><%= link_to 'Edit', edit_interview_path(interview) %></td>
         <td><%= link_to 'Delete', interview, method: :delete, data: { confirm: 'Are you sure you want to delete the interview?' } %></td>

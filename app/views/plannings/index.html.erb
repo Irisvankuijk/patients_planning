@@ -25,7 +25,7 @@
   <tbody>
     <% @plannings.each do |planning| %>
       <tr>
-        <td><%= planning.patient_id %></td>
+        <td><%= planning.patient.full_name %></td>
         <td><%= planning.status %></td>
         <td><%= planning.postphoned_reason %></td>
         <td><%= planning.postphoned_date %></td>
