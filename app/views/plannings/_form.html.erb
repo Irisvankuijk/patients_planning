@@ -27,9 +27,35 @@
 <script type="text/javascript">
   $( document ).ready(function() {
     $("#status_select").change(function() {
-    if ($("#status_select").val() == "2") {
-          $("#postphoned_reason").show()
-    }});
+
+      $("#postphoned_reason").hide();
+      $("#postphoned_date").hide();
+      $("#scheduled_date").hide();
+      $("#scheduled_interviewer").hide();
+      $("#excluded_reason").hide();
+      $("#declined_reason").hide();
+
+      current_val = $("#status_select").val();
+      
+      if ( current_val == "2" ) {
+
+          $("#postphoned_reason").show();
+          $("#postphoned_date").show();
+
+      } else if ( current_val == "3" ) {
+
+          $("#scheduled_date").show();
+          $("#scheduled_interviewer").show();
+
+      } else if ( current_val == "4" ) {
+
+          $("#excluded_reason").show();
+
+      } else if ( current_val == "5" ) {
+
+          $("#declined_reason").show();
+      }
+    });
   });
 </script>
 
@@ -43,27 +69,27 @@
   <%= form.date_field :postphoned_date, id: :planning_postphoned_date, class: "form-control"  %>
 </div>
 
-  <div class="form-group" style="display:none">
+  <div class="form-group" id="scheduled_date" style="display:none">
     <%= form.label :scheduled_datetime %>
     <%= form.datetime_select :scheduled_datetime, id: :planning_scheduled_datetime, class: "form-control"  %>
   </div>
 
-  <div class="form-group" style="display:none">
+  <div class="form-group" id="scheduled_interviewer" style="display:none">
     <%= form.label :scheduled_interviewer %>
     <%= form.text_field :scheduled_interviewer, id: :planning_scheduled_interviewer, class: "form-control"  %>
   </div>
 
-  <div class="form-group" style="display:none">
+  <div class="form-group" id="scheduled_location" style="display:none">
     <%= form.label :scheduled_location %>
     <%= form.text_field :scheduled_location, id: :planning_scheduled_location, class: "form-control"  %>
   </div>
 
-  <div class="form-group" style="display:none">
+  <div class="form-group" id="excluded_reason" style="display:none">
     <%= form.label :excluded_reason %>
     <%= form.text_area :excluded_reason, id: :planning_excluded_reason, class: "form-control"  %>
   </div>
 
-  <div class="form-group" style="display:none">
+  <div class="form-group" id="declined_reason" style="display:none">
     <%= form.label :declined_reason %>
     <%= form.text_area :declined_reason, id: :planning_declined_reason, class: "form-control"  %>
   </div>
