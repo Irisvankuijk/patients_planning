@@ -11,48 +11,59 @@
     </div>
   <% end %>
 
-<div class="form-group">
+
+
+<div class="form-group" id="status">
 <%= form.label :status %>
-<select class="form-control">
-  <option>Open</option>
-  <option>Postphoned</option>
-  <option>Scheduled</option>
-  <option>Excluded</option>
-  <option>Declined</option>
-  <option>Interviewed</option>
+<select class="form-control" id="status_select">
+  <option value="1">Open</option>
+  <option value="2">Postphoned</option>
+  <option value="3">Scheduled</option>
+  <option value="4">Excluded</option>
+  <option value="5">Declined</option>
+  <option value="6">Interviewed</option>
 </select>
 
-  <div class="form-group">
-    <%= form.label :postphoned_reason %>
-    <%= form.text_area :postphoned_reason, id: :planning_postphoned_reason, class: "form-control"  %>
-  </div>
+<script type="text/javascript">
+  $( document ).ready(function() {
+    $("#status_select").change(function() {
+    if ($("#status_select").val() == "2") {
+          $("#postphoned_reason").show()
+    }});
+  });
+</script>
 
-  <div class="form-group">
-    <%= form.label :postphoned_date %>
-    <%= form.date_field :postphoned_date, id: :planning_postphoned_date, class: "form-control"  %>
-  </div>
+<div class="form-group" id="postphoned_reason" style="display:none">
+  <%= form.label :postphoned_reason %>
+  <%= form.text_area :postphoned_reason, class: "form-control" %>
+</div>
 
-  <div class="form-group">
+<div class="form-group" id="postphoned_date" style="display:none">
+  <%= form.label :postphoned_date %>
+  <%= form.date_field :postphoned_date, id: :planning_postphoned_date, class: "form-control"  %>
+</div>
+
+  <div class="form-group" style="display:none">
     <%= form.label :scheduled_datetime %>
     <%= form.datetime_select :scheduled_datetime, id: :planning_scheduled_datetime, class: "form-control"  %>
   </div>
 
-  <div class="form-group">
+  <div class="form-group" style="display:none">
     <%= form.label :scheduled_interviewer %>
     <%= form.text_field :scheduled_interviewer, id: :planning_scheduled_interviewer, class: "form-control"  %>
   </div>
 
-  <div class="form-group">
+  <div class="form-group" style="display:none">
     <%= form.label :scheduled_location %>
     <%= form.text_field :scheduled_location, id: :planning_scheduled_location, class: "form-control"  %>
   </div>
 
-  <div class="form-group">
+  <div class="form-group" style="display:none">
     <%= form.label :excluded_reason %>
     <%= form.text_area :excluded_reason, id: :planning_excluded_reason, class: "form-control"  %>
   </div>
 
-  <div class="form-group">
+  <div class="form-group" style="display:none">
     <%= form.label :declined_reason %>
     <%= form.text_area :declined_reason, id: :planning_declined_reason, class: "form-control"  %>
   </div>
