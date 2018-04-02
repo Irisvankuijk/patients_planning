@@ -15,7 +15,7 @@
 
 <div class="form-group" id="status">
   <%= form.label :status %>
-<%= form.select(:status, [['Open', 1], ['Postphoned', 2], ['Scheduled', 3], ['Excluded', 4], ['Declined', 5], ['Interviewed', 6]], {}, {class: "form-control", id: "status_select"}) %>
+  <%= form.select(:status, [['Open', 1], ['Postphoned', 2], ['Scheduled', 3], ['Excluded', 4], ['Declined', 5], ['Interviewed', 6]], {}, {class: "form-control", id: "status_select"}) %>
 </div>
 
 <script type="text/javascript">
@@ -70,11 +70,7 @@
 
   <div class="form-group" id="scheduled_interviewer" style="display:none">
     <%= form.label :scheduled_interviewer %>
-    <select class="form-control" id="planning_scheduled_interviewer">
-      <option value="1">Iris van Kuijk</option>
-      <option value="2">Odile Raat</option>
-      <option value="3">Stephanie Breedveld</option>
-    </select>
+    <%= form.select(:scheduled_interviewer, [['Stephanie Breedveld', 1], ['Odile Raat', 2], ['Iris van Kuijk', 3]]) %>
   </div>
 
   <div class="form-group" id="scheduled_location" style="display:none">
