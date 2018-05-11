@@ -38,7 +38,8 @@
 
 <div class="form-group">
   <%= form.label :main_condition %>
-  <%= form.select :main_condition, ['Pannenkoekensyndroom', 'Poffertjesziekte', 'Patatjesfobie'], class: "form-control" %>
+  <%= form.select(:main_condition, ['Pannenkoekensyndroom', 'Poffertjesziekte', 'Patatjesfobie'], {}, {class: "form-control"}) %>
+</div>
 
 
   <div class="actions">
