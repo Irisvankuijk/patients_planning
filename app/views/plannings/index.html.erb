@@ -1,47 +1,149 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Plannings</h1>
+<h1>Planning</h1>
+<br>
+<nav>
+  <p><b>Jump to:</b></p>
+    <ol>
+      <li><a href="#scheduled">Scheduled interviews</a></li>
+      <li><a href="#postphoned">Postponed interviews</a></li>
+      <li><a href="#excluded">Excluded patients</a></li>
+      <li><a href="#declined">Declined patients</a></li>
+    </ol>
+</nav>
+<br>
+
+<h3 id="scheduled">Scheduled interviews</h3>
 
 <div class="panel panel-default">
 <div class="panel-body">
 
-<table class ="table">
+  <table class ="table">
 
-  <thead>
-    <tr>
-      <th>Patient</th>
-      <th>Status</th>
-      <th>Postphoned reason</th>
-      <th>Postphoned date</th>
-      <th>Scheduled datetime</th>
-      <th>Scheduled interviewer</th>
-      <th>Scheduled location</th>
-      <th>Excluded reason</th>
-      <th>Declined reason</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @plannings.each do |planning| %>
+    <thead>
       <tr>
-        <td><%= planning.patient.full_name %></td>
-        <td><%= planning.status %></td>
-        <td><%= planning.postphoned_reason %></td>
-        <td><%= planning.postphoned_date %></td>
-        <td><%= planning.scheduled_datetime %></td>
-        <td><%= planning.scheduled_interviewer %></td>
-        <td><%= planning.scheduled_location %></td>
-        <td><%= planning.excluded_reason %></td>
-        <td><%= planning.declined_reason %></td>
-        <td><%= link_to 'Show', planning %></td>
-        <td><%= link_to 'Edit', edit_planning_path(planning) %></td>
-        <td><%= link_to 'Destroy', planning, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Patient</th>
+        <th>Status</th>
+        <th>Interview date</th>
+        <th>Interviewer</th>
+        <th>Location</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @plannings.each do |planning| %>
+        <tr>
+          <td><%= planning.patient.full_name %></td>
+          <td><%= planning.status %></td>
+          <td><%= planning.scheduled_datetime %></td>
+          <td><%= planning.scheduled_interviewer %></td>
+          <td><%= planning.scheduled_location %></td>
+          <td><%= link_to 'Show', planning %></td>
+          <td><%= link_to 'Edit', edit_planning_path(planning) %></td>
+          <td><%= link_to 'Destroy', planning, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div></div><br>
+
+<h3 id="postphoned">Postponed interviews</h3>
+
+<div class="panel panel-default">
+<div class="panel-body">
+
+  <table class ="table">
+
+    <thead>
+      <tr>
+        <th>Patient</th>
+        <th>Status</th>
+        <th>Reason of postponing</th>
+        <th>Postphoned to</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @plannings.each do |planning| %>
+        <tr>
+          <td><%= planning.patient.full_name %></td>
+          <td><%= planning.status %></td>
+          <td><%= planning.postphoned_reason %></td>
+          <td><%= planning.postphoned_date %></td>
+          <td><%= link_to 'Show', planning %></td>
+          <td><%= link_to 'Edit', edit_planning_path(planning) %></td>
+          <td><%= link_to 'Destroy', planning, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div></div><br>
+
+<h3 id="excluded">Excluded patients</h3>
+<div class="panel panel-default">
+<div class="panel-body">
+
+  <table class ="table">
+
+    <thead>
+      <tr>
+        <th>Patient</th>
+        <th>Status</th>
+        <th>Reason of exclusion</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @plannings.each do |planning| %>
+        <tr>
+          <td><%= planning.patient.full_name %></td>
+          <td><%= planning.status %></td>
+          <td><%= planning.excluded_reason %></td>
+          <td><%= link_to 'Show', planning %></td>
+          <td><%= link_to 'Edit', edit_planning_path(planning) %></td>
+          <td><%= link_to 'Destroy', planning, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div></div><br>
+
+<h3 id="declined">Declined patients</h3>
+<div class="panel panel-default">
+<div class="panel-body">
+
+  <table class ="table">
+
+    <thead>
+      <tr>
+        <th>Patient</th>
+        <th>Status</th>
+        <th>Declined reason</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @plannings.each do |planning| %>
+        <tr>
+          <td><%= planning.patient.full_name %></td>
+          <td><%= planning.status %></td>
+          <td><%= planning.declined_reason %></td>
+          <td><%= link_to 'Show', planning %></td>
+          <td><%= link_to 'Edit', edit_planning_path(planning) %></td>
+          <td><%= link_to 'Destroy', planning, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
 </div></div>
+
 
 <br>
