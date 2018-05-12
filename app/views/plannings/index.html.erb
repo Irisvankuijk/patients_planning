@@ -5,6 +5,7 @@
 <nav>
   <p><b>Jump to:</b></p>
     <ol>
+      <li><a href="#open">Open</a></li>
       <li><a href="#scheduled">Scheduled interviews</a></li>
       <li><a href="#postphoned">Postponed interviews</a></li>
       <li><a href="#excluded">Excluded patients</a></li>
@@ -12,6 +13,36 @@
     </ol>
 </nav>
 <br>
+
+<h3 id="open">Open</h3>
+
+<div class="panel panel-default">
+<div class="panel-body">
+
+  <table class ="table">
+
+    <thead>
+      <tr>
+        <th>Patient</th>
+        <th>Status</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @plannings_status_open.each do |planning| %>
+        <tr>
+          <td><%= planning.patient.full_name %></td>
+          <td><%= planning.status %></td>
+          <td><%= link_to 'Show', planning %></td>
+          <td><%= link_to 'Edit', edit_planning_path(planning) %></td>
+          <td><%= link_to 'Destroy', planning, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div></div><br>
 
 <h3 id="scheduled">Scheduled interviews</h3>
 
@@ -32,7 +63,7 @@
     </thead>
 
     <tbody>
-      <% @plannings.each do |planning| %>
+      <% @plannings_status_scheduled.each do |planning| %>
         <tr>
           <td><%= planning.patient.full_name %></td>
           <td><%= planning.status %></td>
@@ -67,7 +98,7 @@
     </thead>
 
     <tbody>
-      <% @plannings.each do |planning| %>
+      <% @plannings_status_postponed.each do |planning| %>
         <tr>
           <td><%= planning.patient.full_name %></td>
           <td><%= planning.status %></td>
@@ -99,7 +130,7 @@
     </thead>
 
     <tbody>
-      <% @plannings.each do |planning| %>
+      <% @plannings_status_excluded.each do |planning| %>
         <tr>
           <td><%= planning.patient.full_name %></td>
           <td><%= planning.status %></td>
@@ -130,7 +161,7 @@
     </thead>
 
     <tbody>
-      <% @plannings.each do |planning| %>
+      <% @plannings_status_declined.each do |planning| %>
         <tr>
           <td><%= planning.patient.full_name %></td>
           <td><%= planning.status %></td>
