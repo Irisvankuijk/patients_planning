@@ -64,7 +64,7 @@
       <% @plannings_status_scheduled.each do |planning| %>
         <tr>
           <td><%= planning.patient.full_name %></td>
-          <td><%= planning.status %></td>
+          <td><%= planning.displayable_status %></td>
           <td><%= planning.scheduled_datetime %></td>
           <td><%= planning.scheduled_interviewer %></td>
           <td><%= planning.scheduled_location %></td>
@@ -97,7 +97,7 @@
       <% @plannings_status_postponed.each do |planning| %>
         <tr>
           <td><%= planning.patient.full_name %></td>
-          <td><%= planning.status %></td>
+          <td><%= planning.displayable_status %></td>
           <td><%= planning.postphoned_reason %></td>
           <td><%= planning.postphoned_date %></td>
           <td><%= link_to 'Edit Status', edit_planning_path(planning) %></td>
@@ -127,7 +127,7 @@
       <% @plannings_status_excluded.each do |planning| %>
         <tr>
           <td><%= planning.patient.full_name %></td>
-          <td><%= planning.status %></td>
+          <td><%= planning.displayable_status %></td>
           <td><%= planning.excluded_reason %></td>
           <td><%= link_to 'Edit Status', edit_planning_path(planning) %></td>
         </tr>
@@ -156,7 +156,7 @@
       <% @plannings_status_declined.each do |planning| %>
         <tr>
           <td><%= planning.patient.full_name %></td>
-          <td><%= planning.status %></td>
+          <td><%= planning.displayable_status %></td>
           <td><%= planning.declined_reason %></td>
           <td><%= link_to 'Edit Status', edit_planning_path(planning) %></td>
         </tr>
