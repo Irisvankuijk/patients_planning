@@ -27,7 +27,7 @@ class PatientsController < ApplicationController
   # POST /patients.json
   def create
     @patient = Patient.new(patient_params)
-    @planning = Planning.new
+    @planning = Planning.new(status: 1)
     @patient.planning = @planning
 
     respond_to do |format|
