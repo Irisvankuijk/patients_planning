@@ -12,13 +12,16 @@
 
 ActiveRecord::Schema.define(version: 20180215124711) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "interviews", force: :cascade do |t|
     t.string "title"
     t.text "notes"
     t.datetime "date"
+    t.integer "patient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "patient_id"
   end
 
   create_table "patients", force: :cascade do |t|
