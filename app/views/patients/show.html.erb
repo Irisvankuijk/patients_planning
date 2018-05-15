@@ -34,20 +34,5 @@
   <%= @patient.location %>
 </p>
 
-<p>
-  <strong>Interviews:</strong>
-    <% if @patient.interviews.empty? %>
-None
-    <% else %>
-     <% @patient.interviews.each do | interview | %>
-     <ul>
-  <li>
-  <%= link_to interview.title, interview %> |
-  <%= interview.date.strftime('%d-%m-%Y') %>
-  </li></ul>
-  <% end %>
-<% end %>
-</p>
-
 <%= link_to 'Edit', edit_patient_path(@patient) %> |
 <%= link_to 'Back', patients_path %>
