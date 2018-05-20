@@ -65,8 +65,8 @@
         <tr>
           <td><%= planning.patient.full_name %></td>
           <td><%= planning.displayable_status %></td>
-          <td><%= planning.scheduled_datetime %></td>
-          <td><%= planning.displayable_interviewer %></td>
+          <td><%= planning.scheduled_datetime.strftime('%d-%m-%Y | %I:%M') unless planning.scheduled_datetime.nil? %></td>
+          <td><%= planning.scheduled_interviewer %></td>
           <td><%= planning.scheduled_location %></td>
           <td><%= link_to 'Edit Status', edit_planning_path(planning) %></td>
         </tr>
@@ -99,7 +99,7 @@
           <td><%= planning.patient.full_name %></td>
           <td><%= planning.displayable_status %></td>
           <td><%= planning.postphoned_reason %></td>
-          <td><%= planning.postphoned_date %></td>
+          <td><%= planning.postphoned_date.strftime('%d-%m-%Y') unless planning.postphoned_date.nil?  %></td>
           <td><%= link_to 'Edit Status', edit_planning_path(planning) %></td>
         </tr>
       <% end %>

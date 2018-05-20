@@ -11,8 +11,6 @@
     </div>
   <% end %>
 
-
-
 <div class="form-group" id="status">
   <%= form.label :status %>
   <%= form.select(:status, [['Open', 1], ['Postphoned', 2], ['Scheduled', 3], ['Excluded', 4], ['Declined', 5], ['Interviewed', 6]], {}, {class: "form-control", id: "status_select"}) %>
@@ -97,9 +95,9 @@
   });
 </script>
 
-  <div class="form-group" id="interviewer" style="display:none">
+  <div class="form-group" id="scheduled_interviewer" style="display:none">
     <%= form.label :scheduled_interviewer %>
-    <%= form.select(:scheduled_interviewer, [['Stephanie Breedveld', 1], ['Odile Raat', 2], ['Iris van Kuijk', 3]], {}, {class: "form-control", id: "status_select"})  %>
+    <%= form.select(:scheduled_interviewer, ['Stephanie Breedveld', 'Odile Raat', 'Iris van Kuijk'], {}, {class: "form-control", id: "status_select"})  %>
   </div>
 
 

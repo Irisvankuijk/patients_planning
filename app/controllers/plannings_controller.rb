@@ -11,9 +11,6 @@ class PlanningsController < ApplicationController
     @plannings_status_declined = Planning.where(status: 5)
     @plannings_status_interviewed = Planning.where(status: 6)
 
-    @plannings_interviewer_sb = Planning.where(interviewer: 1)
-    @plannings_interviewer_or = Planning.where(interviewer: 2)
-    @plannings_interviewer_ivk = Planning.where(interviewer: 3)
   end
 
   # GET /plannings/1
