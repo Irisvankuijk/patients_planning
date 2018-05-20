@@ -10,7 +10,17 @@ class Planning < ApplicationRecord
 		"6" => "Interviewed"
 	}
 
+	INTERVIEWER = {
+		"1" => "Stephanie Breedveld",
+		"2" => "Odile Raat",
+		"3" => "Iris van Kuijk"
+	}
+
 	def displayable_status
 		return STATUSES[status]
+	end
+
+	def displayable_interviewer
+		return INTERVIEWER[scheduled_interviewer]
 	end
 end

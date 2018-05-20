@@ -10,6 +10,10 @@ class PlanningsController < ApplicationController
     @plannings_status_excluded = Planning.where(status: 4)
     @plannings_status_declined = Planning.where(status: 5)
     @plannings_status_interviewed = Planning.where(status: 6)
+
+    @plannings_interviewer_sb = Planning.where(interviewer: 1)
+    @plannings_interviewer_or = Planning.where(interviewer: 2)
+    @plannings_interviewer_ivk = Planning.where(interviewer: 3)
   end
 
   # GET /plannings/1
@@ -74,6 +78,6 @@ class PlanningsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def planning_params
-      params.require(:planning).permit(:status, :postphoned_reason, :postphoned_date, :scheduled_datetime, :scheduled_interviewer, :scheduled_location, :excluded_reason, :declined_reason)
+      params.require(:planning).permit(:status, :postphoned_reason, :postphoned_date, :scheduled_interviewer, :scheduled_location, :excluded_reason, :declined_reason)
     end
 end
