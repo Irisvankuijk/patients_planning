@@ -86,9 +86,27 @@
   <%= form.date_field :postponed_date, id: "planning_postponed_date", class: "form-control"  %>
 </div>
 
-<div class="form-group" id="scheduled_date" style="display:none">
-  <%= form.label :scheduled_datetime %>
-  <%= form.datetime_select(:scheduled_datetime, {class: "form-control", id: "scheduled_datetime"}) %>
+<div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" name="planning[scheduled_datetime]"/>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker({
+                  format: "D MMM YYYY HH:mm",
+                  defaultDate: "<%= planning.scheduled_datetime.strftime("%d %b %Y %R") %>"
+                });
+            });
+        </script>
+    </div>
 </div>
 
   <div class="form-group" id="scheduled_interviewer" style="display:none">

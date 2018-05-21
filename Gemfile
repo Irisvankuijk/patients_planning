@@ -14,6 +14,10 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.3.7'
+
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+
 gem 'jquery-rails'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
