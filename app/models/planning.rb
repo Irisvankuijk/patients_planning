@@ -4,8 +4,8 @@ class Planning < ApplicationRecord
 	validate :not_past_date
 
 	def not_past_date
-  	if self.scheduled_datetime.past?
-    errors.add(:scheduled_datetime, 'can not be in the past')
+  	if self.scheduled_datetime.present? && self.scheduled_datetime.past?
+    	errors.add(:scheduled_datetime, 'can not be in the past')
   	end
 	end
 
