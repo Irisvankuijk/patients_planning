@@ -6,7 +6,7 @@ class PlanningsController < ApplicationController
   def index
     @plannings_status_open = Planning.where(status: 1)
     @plannings_status_postponed = Planning.where(status: 2)
-    @plannings_status_scheduled = Planning.where(status: 3)
+    @plannings_status_scheduled = Planning.where(status: 3).order('scheduled_datetime')
     @plannings_status_excluded = Planning.where(status: 4)
     @plannings_status_declined = Planning.where(status: 5)
     @plannings_status_interviewed = Planning.where(status: 6)
