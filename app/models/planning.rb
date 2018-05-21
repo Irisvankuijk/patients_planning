@@ -1,7 +1,14 @@
 class Planning < ApplicationRecord
 	belongs_to :patient
 
-	#validates :postponed_reason, presence: true
+	validate :not_past_date
+
+	def not_past_date
+  	if self.scheduled_datetime.past?
+    errors.add(:scheduled_datetime, 'can not be in the past')
+  	end
+	end
+
 
 	STATUSES = {
 		"1" => "Open",
