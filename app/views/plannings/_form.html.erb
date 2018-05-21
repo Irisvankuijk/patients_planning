@@ -13,7 +13,7 @@
 
 <div class="form-group" id="status">
   <%= form.label :status %>
-  <%= form.select(:status, [['Open', 1], ['Postphoned', 2], ['Scheduled', 3], ['Excluded', 4], ['Declined', 5], ['Interviewed', 6]], {}, {class: "form-control", id: "status_select"}) %>
+  <%= form.select(:status, [['Open', 1], ['Postponed', 2], ['Scheduled', 3], ['Excluded', 4], ['Declined', 5], ['Interviewed', 6]], {}, {class: "form-control", id: "status_select"}) %>
 </div>
 
 <script type="text/javascript">
@@ -23,8 +23,8 @@
       
       if ( current_val == "2" ) {
 
-          $("#postphoned_reason").show();
-          $("#postphoned_date").show();
+          $("#postponed_reason").show();
+          $("#postponed_date").show();
 
       } else if ( current_val == "3" ) {
 
@@ -43,8 +43,8 @@
 
     $("#status_select").on('change', function() {
 
-      $("#postphoned_reason").hide();
-      $("#postphoned_date").hide();
+      $("#postponed_reason").hide();
+      $("#postponed_date").hide();
       $("#scheduled_date").hide();
       $("#scheduled_interviewer").hide();
       $("#scheduled_location").hide();
@@ -55,8 +55,8 @@
       
       if ( current_val == "2" ) {
 
-          $("#postphoned_reason").show();
-          $("#postphoned_date").show();
+          $("#postponed_reason").show();
+          $("#postponed_date").show();
 
       } else if ( current_val == "3" ) {
 
@@ -76,14 +76,14 @@
   });
 </script>
 
-<div class="form-group" id="postphoned_reason" style="display:none">
-  <%= form.label :postphoned_reason %>
-  <%= form.select(:postphoned_reason, ['Patient currently not stable', 'Patient currently not available', 'Other'], {}, {class: "form-control", id: "status_select"})  %>
+<div class="form-group" id="postponed_reason" style="display:none">
+  <%= form.label :postponed_reason %>
+  <%= form.select(:postponed_reason, ['Patient currently not stable', 'Patient currently not available', 'Other'], {}, {class: "form-control", id: "status_select"})  %>
 </div>
 
-<div class="form-group" id="postphoned_date" style="display:none">
-  <%= form.label :postphoned_date %>
-  <%= form.date_field :postphoned_date, id: "planning_postphoned_date", class: "form-control"  %>
+<div class="form-group" id="postponed_date" style="display:none">
+  <%= form.label :postponed_date %>
+  <%= form.date_field :postponed_date, id: "planning_postponed_date", class: "form-control"  %>
 </div>
 
 <div class="form-group" id="scheduled_date" style="display:none">

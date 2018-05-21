@@ -1,7 +1,7 @@
 class Planning < ApplicationRecord
 	belongs_to :patient
 
-	validates :postponed_reason, presence: true
+	#validates :postponed_reason, presence: true
 
 	STATUSES = {
 		"1" => "Open",

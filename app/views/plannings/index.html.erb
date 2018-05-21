@@ -7,7 +7,7 @@
     <ol>
       <li><a href="#open">Open</a></li>
       <li><a href="#scheduled">Scheduled interviews</a></li>
-      <li><a href="#postphoned">Postponed interviews</a></li>
+      <li><a href="#postponed">Postponed interviews</a></li>
       <li><a href="#excluded">Excluded patients</a></li>
       <li><a href="#declined">Declined patients</a></li>
     </ol>
@@ -76,7 +76,7 @@
 
 </div></div><br>
 
-<h3 id="postphoned">Postponed interviews</h3>
+<h3 id="postponed">Postponed interviews</h3>
 
 <div class="panel panel-default">
 <div class="panel-body">
@@ -98,8 +98,8 @@
         <tr>
           <td><%= planning.patient.full_name %></td>
           <td><%= planning.displayable_status %></td>
-          <td><%= planning.postphoned_reason %></td>
-          <td><%= planning.postphoned_date.strftime('%d-%m-%Y') unless planning.postphoned_date.nil?  %></td>
+          <td><%= planning.postponed_reason %></td>
+          <td><%= planning.postponed_date.strftime('%d-%m-%Y') unless planning.postponed_date.nil?  %></td>
           <td><%= link_to 'Edit Status', edit_planning_path(planning) %></td>
         </tr>
       <% end %>

@@ -75,6 +75,6 @@ class PlanningsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def planning_params
-      params.require(:planning).permit(:status, :postphoned_reason, :postphoned_date, :scheduled_interviewer, :scheduled_location, :excluded_reason, :declined_reason)
+      params.require(:planning).permit(:status, :postponed_reason, :postponed_date, :scheduled_datetime, :scheduled_interviewer, :scheduled_location, :excluded_reason, :declined_reason)
     end
 end

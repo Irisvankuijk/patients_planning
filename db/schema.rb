@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180215124711) do
+ActiveRecord::Schema.define(version: 20180521075320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,8 +37,8 @@ ActiveRecord::Schema.define(version: 20180215124711) do
 
   create_table "plannings", force: :cascade do |t|
     t.string "status"
-    t.text "postphoned_reason"
-    t.date "postphoned_date"
+    t.text "postponed_reason"
+    t.date "postponed_date"
     t.datetime "scheduled_datetime"
     t.string "scheduled_interviewer"
     t.string "scheduled_location"
