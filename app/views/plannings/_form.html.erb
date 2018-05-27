@@ -11,99 +11,100 @@
     </div>
   <% end %>
 
-<div class="form-group" id="status">
-  <%= form.label :status %>
-  <%= form.select(:status, [['Open', 1], ['Postponed', 2], ['Scheduled', 3], ['Excluded', 4], ['Declined', 5], ['Interviewed', 6]], {}, {class: "form-control", id: "status_select"}) %>
-</div>
+  <div class="form-group" id="status">
+    <%= form.label :status %>
+    <%= form.select(:status, [['Open', 1], ['Postponed', 2], ['Scheduled', 3], ['Excluded', 4], ['Declined', 5], ['Interviewed', 6]], {}, {class: "form-control", id: "status_select"}) %>
+  </div>
 
-<script type="text/javascript">
-  $( document ).ready(function() {
+  <script type="text/javascript">
+    $( document ).ready(function() {
 
-      current_val = $("#status_select").val();
+        current_val = $("#status_select").val();
 
-      if ( current_val == "2" ) {
+        if ( current_val == "2" ) {
 
-          $("#postponed_reason").show();
-          $("#postponed_date").show();
+            $("#postponed_reason").show();
+            $("#postponed_date").show();
 
-      } else if ( current_val == "3" ) {
+        } else if ( current_val == "3" ) {
 
-          $("#scheduled_datetime").show();
-          $("#scheduled_interviewer").show();
-          $("#scheduled_location").show();
+            $("#scheduled_datetime").show();
+            $("#scheduled_interviewer").show();
+            $("#scheduled_location").show();
 
-      } else if ( current_val == "4" ) {
+        } else if ( current_val == "4" ) {
 
-          $("#excluded_reason").show();
+            $("#excluded_reason").show();
 
-      } else if ( current_val == "5" ) {
+        } else if ( current_val == "5" ) {
 
-          $("#declined_reason").show();
-      }
+            $("#declined_reason").show();
+        }
 
-    $("#status_select").on('change', function() {
+      $("#status_select").on('change', function() {
 
-      $("#postponed_reason").hide();
-      $("#postponed_date").hide();
-      $("#scheduled_datetime").hide();
-      $("#scheduled_interviewer").hide();
-      $("#scheduled_location").hide();
-      $("#excluded_reason").hide();
-      $("#declined_reason").hide();
+        $("#postponed_reason").hide();
+        $("#postponed_date").hide();
+        $("#scheduled_datetime").hide();
+        $("#scheduled_interviewer").hide();
+        $("#scheduled_location").hide();
+        $("#excluded_reason").hide();
+        $("#declined_reason").hide();
 
-      current_val = $("#status_select").val();
+        current_val = $("#status_select").val();
 
-      if ( current_val == "2" ) {
+        if ( current_val == "2" ) {
 
-          $("#postponed_reason").show();
-          $("#postponed_date").show();
+            $("#postponed_reason").show();
+            $("#postponed_date").show();
 
-      } else if ( current_val == "3" ) {
+        } else if ( current_val == "3" ) {
 
-          $("#scheduled_datetime").show();
-          $("#scheduled_interviewer").show();
-          $("#scheduled_location").show();
+            $("#scheduled_datetime").show();
+            $("#scheduled_interviewer").show();
+            $("#scheduled_location").show();
 
-      } else if ( current_val == "4" ) {
+        } else if ( current_val == "4" ) {
 
-          $("#excluded_reason").show();
+            $("#excluded_reason").show();
 
-      } else if ( current_val == "5" ) {
+        } else if ( current_val == "5" ) {
 
-          $("#declined_reason").show();
-      }
+            $("#declined_reason").show();
+        }
+      });
     });
-  });
-</script>
+  </script>
 
-<div class="form-group" id="postponed_reason" style="display:none">
-  <%= form.label :postponed_reason %>
-  <%= form.select(:postponed_reason, ['Patient currently not stable', 'Patient currently not available', 'Other'], {}, {class: "form-control", id: "status_select"})  %>
-</div>
+  <div class="form-group" id="postponed_reason" style="display:none">
+    <%= form.label :postponed_reason %>
+    <%= form.select(:postponed_reason, ['Patient currently not stable', 'Patient currently not available', 'Other'], {}, {class: "form-control", id: "status_select"})  %>
+  </div>
 
-<div class="form-group" id="postponed_date" style="display:none">
-  <%= form.label :postponed_date %>
-  <%= form.date_field :postponed_date, id: "planning_postponed_date", class: "form-control"  %>
-</div>
+  <div class="form-group" id="postponed_date" style="display:none">
+    <%= form.label :postponed_date %>
+    <%= form.date_field :postponed_date, id: "planning_postponed_date", class: "form-control"  %>
+  </div>
 
 
-<div class="form-group" id="scheduled_datetime" style="display:none">
-  <%= form.label :scheduled_datetime %>
-  <div class='input-group date' id='datetimepicker1'>
-    <input type='text' class="form-control" name="planning[scheduled_datetime]"/>
+  <div class="form-group" id="scheduled_datetime" style="display:none">
+    <%= form.label :scheduled_datetime %>
+    <div class='input-group date' id='datetimepicker1'>
+      <input type='text' class="form-control" name="planning[scheduled_datetime]"/>
       <span class="input-group-addon">
         <span class="glyphicon glyphicon-calendar"></span>
-        </span>
+      </span>
     </div>
-</div>
-<script type="text/javascript">
-$(function () {
-    $('#datetimepicker1').datetimepicker({
-      format: "D MMM YYYY HH:mm",
-      defaultDate: "<%= planning.scheduled_datetime.strftime("%d %b %Y %R") %>"
+  </div>
+
+  <script type="text/javascript">
+    $(function () {
+      $('#datetimepicker1').datetimepicker({
+        format: "D MMM YYYY HH:mm",
+        defaultDate: "<%= planning.scheduled_datetime.strftime("%d %b %Y %R") %>"
+      });
     });
-});
-</script>
+  </script>
 
   <div class="form-group" id="scheduled_interviewer" style="display:none">
     <%= form.label :scheduled_interviewer %>
