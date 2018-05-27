@@ -13,7 +13,7 @@
 
   <div class="form-group" id="status">
     <%= form.label :status %>
-    <%= form.select(:status, [['Open', 1], ['Postponed', 2], ['Scheduled', 3], ['Excluded', 4], ['Declined', 5], ['Interviewed', 6]], {}, {class: "form-control", id: "status_select"}) %>
+    <%= form.select(:status, Planning::STATUSES.map { |k, v| [v,k] }, {}, {class: "form-control", id: "status_select"}) %>
   </div>
 
   <script type="text/javascript">

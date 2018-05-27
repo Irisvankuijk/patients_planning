@@ -10,7 +10,6 @@ class PlanningsController < ApplicationController
     @plannings_status_excluded = Planning.where(status: 4)
     @plannings_status_declined = Planning.where(status: 5)
     @plannings_status_interviewed = Planning.where(status: 6)
-
   end
 
   # GET /plannings/1
@@ -48,7 +47,7 @@ class PlanningsController < ApplicationController
   def update
     respond_to do |format|
       if @planning.update(planning_params)
-        format.html { redirect_to @planning, notice: 'Planning was successfully updated.' }
+        format.html { redirect_to(plannings_url, notice: 'Planning was successfully updated.') }
         format.json { render :show, status: :ok, location: @planning }
       else
         format.html { render :edit }
