@@ -10,6 +10,7 @@
       <li><a href="#postponed">Postponed interviews</a></li>
       <li><a href="#excluded">Excluded patients</a></li>
       <li><a href="#declined">Declined patients</a></li>
+      <li><a href="#interviewed">Interviewed patients</a></li>
     </ol>
 </nav>
 <br>
@@ -164,7 +165,32 @@
     </tbody>
   </table>
 
-</div></div>
+</div></div><br>
 
 
-<br>
+<h3 id="interviewed">Interviewed patients</h3>
+<div class="panel panel-default">
+<div class="panel-body">
+
+  <table class ="table">
+
+    <thead>
+      <tr>
+        <th>Patient</th>
+        <th>Status</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @plannings_status_interviewed.each do |planning| %>
+        <tr>
+          <td><%= planning.patient.full_name %></td>
+          <td><%= planning.displayable_status %></td>
+          <td><%= link_to 'Edit Status', edit_planning_path(planning) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div></div><br>
